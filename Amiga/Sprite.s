@@ -66,8 +66,8 @@ BITPLANE1     equ    $21000
        move.l #COPPERLIST,a1
        lea    copperl(pc),a2 
 cloop:
-       move.l (a2),(a1)+
-       cmp.l  #$FFFFFFFE,(a2)+
+       move.l (a2)+,(a1)+
+       cmp.l  #-1,(a2)
        bne    cloop
 
 ; copy sprite to addresses
